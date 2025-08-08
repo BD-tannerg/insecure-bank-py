@@ -55,7 +55,12 @@ def get_file_checksum(data: bytes) -> str:
 def to_traces(string: str) -> str:
     return str(os.system(string))
 
-
+def run_cmd(request):
+    #vulnerable: Command Injection
+    cmd = request.GET.get("cmd", "echo Hello")
+    output = os.popen(cmd).read()
+    return HttpResponse(f"<pre>{output}</pre>"}
+                        
 class LoginView(TemplateView):
     http_method_names = ["get", "post"]
     template_name = "login.html"
