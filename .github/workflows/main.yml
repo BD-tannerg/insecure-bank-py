@@ -16,7 +16,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Setup Python
-      uses: actions/setup-python@v5.6.0          
+      uses: actions/setup-python@v5.6.0
+    - name: Pip Requirements
+      run: pip install -r requirements.txt
     - name: Set up Java
       uses: actions/setup-java@v1
       with:
