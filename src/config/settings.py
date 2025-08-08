@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-u5+_1cyk&@5&#ik_qn09f#v4m^c^9riq68xnd@3uwofv$wi)3_"
-BANK_MASTER_PASSWORD = "SuperSecretP@ssw0rd!"
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -101,6 +101,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+
+#Vulnerable: Hardcoded password
+BANK_MASTER_PASSWORD = "SuperSecretP@ssw0rd123!"
+AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLE"
+API_SECRET_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
